@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>LICORERÍA</title>
+    <meta charset="utf-8" http-equiv="content-type" content="txt/html"; charset="iso-8859-1">
+    <link rel="stylesheet" type="text/css" href="index_style.css">
+
+
+  </head>
+  <body>
+          <div id="general">
+            <div id="header">
+              <h2> </h2>
+                <br>
+              <h1 align="center" style="color:#FFFFFF">LICORERÍA LA MUERTE</h1>
+            </div>
+
+          <div id="ofertas">
+
+
+<!--INICIO DIV IMAGEN-->
+              <div id="fon_imag">
+                  <div id="imag">
+                          <div id="imag_fin">
+                          <img src="0.jpg" name="cambio" alt=""
+                          style="max-width:100%;width:auto;height:100%;" align="middle">
+                      </div>
+                  </div>
+              </div>
+<!--FIN DIV IMAGEN-->
+
+<!--INICIO CAJAS DE TEXTO DERECHA-->
+<div id="forn_der">
+
+
+                <div id="header2">
+                  <form name="derechatxt"><br><br>
+                  <FONT style="color:#000000" SIZE=2>Importe</font>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <label style="color:#000000">:</label>
+                  &nbsp;&nbsp;&nbsp;&nbsp;
+                  <input size="20" type="number"
+                  name="importetxt" id="importetxt" placeholder="S/. 0.00" disabled="disabled" step="00.01">
+                  <br><br>
+
+                  <FONT style="color:#000000" SIZE=2>IGV (19%)</font>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <label style="color:#000000">:</label>
+                  &nbsp;&nbsp;&nbsp;&nbsp;
+                  <input size="20" type="number" name="txtigv" id="txtigv" placeholder="S/. 0.00" disabled="disabled" step="00.01">
+                  <br><br>
+
+                  <FONT style="color:#000000" SIZE=2>*Total a Pagar</font>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                  <label style="color:#000000">:</label>
+                  &nbsp;&nbsp;&nbsp;&nbsp;
+                  <input size=20 type="number" name="txttotal" id="txttotal" placeholder="S/. 0.00" disabled="disabled" step="00.01">
+
+                </form>
+
+                </div>
+                                  </div>
+
+
+<!--FIN CAJAS DE TEXTO DERECHA-->
+          </div>
+          <div id="novedades">
+            <h4>INFORME DE NUESTROS PRODUCTOS</h4>
+            <br>
+<!--INICIO SELECT COMBOBOX-->
+<form name="bebida" action="#">
+
+      <select name="selecbebida" onchange="if(document.images) document.images['cambio'].
+        src=this.options[this.selectedIndex].value+'.jpg';validar(this.form);">
+        <!--(this.options[this.selectedIndex].innerHTML); mostrarPrecio(this.value);-->
+        <option selected disabled="disabled" value="0">-----SELECCIONE-----</option>
+        <option value="1">RON</option>
+        <option value="2">WHISKY</option>
+        <option value="3">PISCO</option>
+        <option value="4">4</option>
+
+      </select>
+</form>
+
+<script>
+
+/*
+*/
+  function validar(form)
+{
+    if (bebida.selecbebida.options[bebida.selecbebida.selectedIndex].value == "1")
+
+    {
+
+    //alert("HA ELEGIDO: RON");
+    document.getElementById('precio').value = 150.00;
+    document.getElementById('txtigv').value = (150*0.19);
+    document.getElementById('importetxt').value = (150.00);
+
+    form.mes.focus(); return true;
+    }
+    else if (bebida.selecbebida.options[bebida.selecbebida.selectedIndex].value == "2")
+
+    {
+
+    //alert("HA ELEGIDO: WHISKY");
+    document.getElementById('precio').value = "170.00";
+    document.getElementById('txtigv').value = (170*0.19);
+    document.getElementById('importetxt').value = (170.00);
+
+    form.mes.focus(); return true;
+
+    }
+    else if (bebida.selecbebida.options[bebida.selecbebida.selectedIndex].value == "3")
+
+    {
+
+    //alert("HA ELEGIDO: PISCO");
+    document.getElementById('precio').value = "210.00";
+    document.getElementById('txtigv').value = (210*0.19);
+    document.getElementById('importetxt').value = (210.00);
+
+    form.mes.focus(); return true;
+
+    }
+      form.submit();
+    }
+    /*situacion funcion*/
+
+    function recar()
+    {
+           var opcion = document.frmrecargo.chekRecargo; //acceso al botón
+           if (opcion.checked == true) { //botón seleccionado
+              //alert("Sele se le hizo un recargo de: s/. 7.00")
+              document.getElementById('txtrecar').value = "7.00";
+              form.mes.focus(); return true;
+              }
+     }
+
+     function situacion()
+    {
+           var opcion1 = document.Nuevo.radionuevo; //acceso al botón
+           var opcion2 = document.Nuevo.radioantiguo; //acceso al botón
+           if (opcion1.checked == true) { //botón seleccionado
+              //alert("Se le hizo un descuento de: s/. 5.00")
+              document.getElementById('txtdesc').value = "5.00";
+              form.mes.focus(); return true;
+              }
+
+            else if (opcion2.checked == true) { //botón seleccionado
+              //alert("Se le hizo un descuento de: s/. 10.00")
+              document.getElementById('txtdesc').value = "10.00";
+              form.mes.focus(); return true;
+              }
+
+      }
+
+     function formapago(){
+
+        var A1 = document.pago.radiocontado; //acceso al botón
+        var A2 = document.pago.radiopartes; //acceso al botón
+
+        var valorimporte =document.derechatxt.importetxt.value;
+        var valorigv=document.derechatxt.txtigv.value;
+        var impor=document.derechatxt.importetxt.value;
+
+        var reca=document.izquierdatxt.txtrecar;
+        var des=document.izquierdatxt.txtdesc;
+        var rec_desc=document.izquierdatxt;
+        var invis=document.derechatxt.invisible;
+        var tot=document.derechatxt.txttotal;
+
+
+        impor=parseFloat(valorimporte)+parseFloat(valorigv);
+        tot=parseFloat(valorimporte)+parseFloat(valorigv);
+        if (A1.checked == true) {
+          //forma de pago
+           //alert("Se le hizo un recargo de: s/. 0.00")
+           document.derechatxt.importetxt.value=impor;
+           document.getElementById('importetxt').value =impor ;
+
+
+           document.getElementById('txttotal').value =tot+((txtrecar.value)-(txtdesc.value));
+          form.mes.focus(); return true;
+          //fin forma de pago
+
+           } else if (A2.checked == true)
+           {
+             //forma de pago
+          var numero = document.izquierdatxt.txtrecar;
+          // alert("Se le hizo un recargo de: s/. 5.00")
+           numero = parseFloat(txtrecar.value)+5.00;
+           document.getElementById('txtrecar').value =numero+".00";
+           //forma de pago
+           document.derechatxt.importetxt.value=impor;
+           document.getElementById('importetxt').value =impor ;
+           document.getElementById('txttotal').value =tot+((txtrecar.value)-(txtdesc.value));
+
+
+           form.mes.focus(); return true;
+
+
+           } }
+           function totalfinal(){
+             var valigv=document.derechatxt.txtigv.value;
+             var valimporte =document.derechatxt.importetxt.value;
+             var totpago=document.derechatxt.txttotal.value;
+             totpago=impor+tot;
+             document.getElementById('txttotal').value =totpago ;
+           }
+
+</script>
+
+<!--FIN SELECT COMBOBOX-->
+            <br>
+            <h5><span style="color:#C90F06">*El precio no incluye IGV</span></h5>
+              <br>
+              <br>
+<!--INICIO DIV CUADRO SITUACIÓN-->
+
+                <fieldset width="50" px="50">
+                <legend>Situación</legend>
+                  <br>
+                  <form name="Nuevo" action="#">
+                      <input id="radionuevo" type="radio" name="descradio" onchange="return situacion()">Nuevo
+                      &nbsp;&nbsp;&nbsp;&nbsp;
+                      <input id="radioantiguo" type="radio" name="descradio" onchange="return situacion()"="">Antiguo
+                  </form>
+                      <br>
+                    </form>
+            </fieldset>
+
+
+<!--FIN DIV CUADRO SITUACIÓN-->
+<!--INICIO CHECKBOX-->
+<form name="frmrecargo" action="#" >
+  <input type="checkbox" name="chekRecargo" onchange="return recar()"=""/>
+     <font size="2">Recargo
+                  <span style="color:#C90F06">(unicamente a provincia)</span>
+</form>
+                  <br>
+                  <br>
+
+<!--FIN CHECKBOX-->
+                <br>
+<!--INICIO DIV CUADRO FORMA DE PAGO-->
+                <fieldset width="50" px="50">
+                  <legend>Forma de Pago</legend>
+                  <br>
+                  <form name="pago" action="#">
+                      <input id="radiocontado" type="radio" name="radiopago" onchange="return formapago(); return importecalcular">Contado
+                      &nbsp;&nbsp;&nbsp;&nbsp;
+                      <input id="radiopartes" type="radio" name="radiopago" onchange="return formapago()"="">Partes
+                  </form>
+                      <br><br><br>
+
+                </fieldset>
+
+<!--INICIO DIV CUADRO FORMA DE PAGO-->
+<!--INICIO CAJAS DE TEXTO DIV IZQUIERDA-->
+              <div id="header2">
+                  <form name="izquierdatxt" action="#" >
+                        <FONT style="color:#000000" SIZE=2>Costo Básico</font>
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          <FONT style="color:#000000" SIZE=6>:</font>
+                            &nbsp;&nbsp;&nbsp;&nbsp;
+                            <input  size="20" type="number"step="0.01"
+                                name="precio" id="precio" placeholder="S/. 0.00" onkeyup="Costo()" disabled="disabled" >
+                                  <br>
+
+                                  <FONT style="color:#000000" SIZE=2>Descuento</font>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <FONT style="color:#000000" SIZE=6>:</font>
+                                      &nbsp;&nbsp;&nbsp;&nbsp;
+                                      <input size=20 type="number" step="0.01" name="txtdesc" id="txtdesc" placeholder="S/. 0.00" disabled="disabled"  >
+                                      <br>
+
+                                      <FONT style="color:#C90F06" SIZE=2>*RECARGO</font>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <FONT style="color:#c90f06" SIZE=6>:</font>
+                                          &nbsp;&nbsp;&nbsp;&nbsp;
+                                <input size=20 type="number" step="0.01" name="txtrecar" id="txtrecar" onkeyup="formapago()" placeholder="S/. 0.00" disabled="disabled" >
+                    </form>
+                </div>
+<!--FIN CAJAS DE TEXTO DIV IZQUIERDA-->
+          </div>
+      </div>
+  </body>
+</html>

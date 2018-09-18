@@ -1,0 +1,88 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  }
+  BODY { margin-top: 0 }
+  div {
+  border-top-width: 0px;
+  border-right-width: 0px;
+  border-bottom-width: 0px;
+  border-left-width: 0px;
+  }
+  div#general{
+    border-style: solid;
+    border-width: 8px;
+    margin: auto;
+    margin-top: 30px;
+    width: 960px;
+    height: 570px;
+    background-color: #34C4C9;
+  }
+  div#novedades
+  {
+
+    margin: 20px;
+    width: 400px;
+    height: 45px;
+    background-color: #34C4C9;
+  }
+
+  div#ofertas{
+    float:right;
+    margin: 20px;
+    width: 400px;
+    height: 455px;
+    background-color: #white;
+  }
+
+  div#header
+  {
+    width: 960px;
+    height: 60px;
+    margin: auto;
+    background-color:#000000;
+  }
+  div#header2
+  {
+    width: 405px;
+    height: 105px;
+    margin: auto;
+    background-color: #34C4C9;
+  }
+
+  div#fon_imag{
+    float:right;
+    width: 418px;
+    height: 326px;
+    margin: auto;
+    background-color: black;
+  }
+
+  div#forn_der{
+
+    height: 160px;
+    float:right;
+    width: 390px;
+    height: 226px;
+    margin: auto;
+
+  }
+
+  div#imag{
+    float:right;
+    width: 370px;
+    height: 280px;
+    margin: 23px;
+    background-color: white;
+  }
+  div#imag_fin{
+    float:right;
+    width: 325px;
+    height: 280px;
+
+    background-color: white;
+  }
+
+
+
+  ------
